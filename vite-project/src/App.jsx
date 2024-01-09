@@ -1,10 +1,12 @@
+import Inventary from "./component/Inventary"
+
+
 
 
 function App() {
 
   return (
-    <>hello</>
-  
+   <Inventary/>
   )
 }
 
