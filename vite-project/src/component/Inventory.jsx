@@ -10,13 +10,19 @@ import { TfiLocationArrow } from "react-icons/tfi";
 import { FaUserFriends } from "react-icons/fa";
 import { IoColorPaletteSharp } from "react-icons/io5";
 import { CiCircleQuestion ,CiSearch} from "react-icons/ci";
+import Price from './Price';
 
 
 
 const Inventory = () => {
+
+  const renderPrices = () => {
+    return Array.from({ length: 20 }, (_, index) => <Price key={index} />);
+  };
+
   return (
     <div className="flex h-screen bg-gray-100">
-      <nav className="w-64 px-8 py-4 bg-[#363740] text-white">
+      <nav className=" w-64 px-8 py-4 bg-[#363740]  text-white">
       <div className="flex items-center space-x-2 mb-10">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -78,6 +84,7 @@ const Inventory = () => {
         <span className="block font-bold">₹222.10</span>
       </div>
     </nav>
+    
     <div className="flex-1 px-8 py-4">
       
     <div className="flex items-center mb-4">
@@ -102,7 +109,7 @@ const Inventory = () => {
   
   <hr/>
   
-  <div className="flex items-center ml-8 mt-8 mb-8">
+  <div className="flex items-center ml-8 mt-8 mb-8 ">
   <h1 className="text-xl mr-2">Overview</h1>
 
   <div className="flex items-center ml-auto">
@@ -115,7 +122,7 @@ const Inventory = () => {
     </div>
 
   
-    <div className="flex gap-4 ">
+    <div className="flex gap-4  ">
   <div className="flex-grow bg-white rounded-lg shadow p-10">
     <div className="text-l  text-gray-500">Online orders</div>
     <div className="text-3xl mt-4 font-semibold">231</div>
@@ -126,7 +133,7 @@ const Inventory = () => {
   </div>
 </div>
 
-      <div className="bg-white p-4">
+      <div className="bg-white mt-4 p-4">
         <h2 className="text-xl font-semibold mb-4">Transactions | This Month</h2>
         <div className="flex justify-between mb-4">
           <input
@@ -137,7 +144,7 @@ const Inventory = () => {
             Sort
           </button>
         </div>
-        <div className="relative w-full overflow-auto">
+        <div className="relative w-full overflow-auto bg-gray-100">
           <table className="w-full caption-bottom text-sm">
             <thead className="[&amp;_tr]:border-b">
               <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
@@ -158,6 +165,11 @@ const Inventory = () => {
             <tbody className="[&amp;_tr:last-child]:border-0"></tbody>
           </table>
         </div>
+        <hr />
+       {renderPrices()}
+       <hr/>
+     
+
         <div className="flex justify-between items-center mt-4">
           <button className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
             Previous
