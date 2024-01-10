@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Inventary = () => {
+const Inventory = () => {
   return (
     <div className="flex h-screen bg-gray-100">
-    <nav className="w-64 px-8 py-4 bg-[#363740] text-white">
+      <nav className="w-64 px-8 py-4 bg-[#363740] text-white">
       <div className="flex items-center space-x-2 mb-10">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -90,18 +90,11 @@ const Inventary = () => {
           <div className="flex flex-col space-y-1.5 p-6">
             <h3 className="text-2xl font-semibold leading-none tracking-tight">Amount received</h3>
             <button
-              type="button"
-              role="combobox"
-              aria-controls="radix-:Rjarnnnla:"
-              aria-expanded="false"
-              aria-autocomplete="none"
-              dir="ltr"
-              data-state="closed"
-              data-placeholder=""
-              className="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-              id="time-frame"
-            >
-              <span style="pointer-events:none">Last Month</span>
+            style={{ pointerEvents: 'none' }}
+            className="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+>
+              <span style={{ pointerEvents: 'none' }}>Last Month</span>
+
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -119,10 +112,21 @@ const Inventary = () => {
               </svg>
             </button>
             <select
-              aria-hidden="true"
-              tabIndex="-1"
-              style="position:absolute;border:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;word-wrap:normal"
-            >
+          aria-hidden="true"
+          tabIndex="-1"
+          style={{
+            position: 'absolute',
+            border: 0,
+            width: '1px',
+            height: '1px',
+            padding: 0,
+            margin: '-1px',
+            overflow: 'hidden',
+            clip: 'rect(0, 0, 0, 0)',
+            whiteSpace: 'nowrap',
+            wordWrap: 'normal',
+          }}
+        >
               <option value=""></option>
             </select>
           </div>
@@ -211,4 +215,4 @@ const Inventary = () => {
   )
 }
 
-export default Inventary
+export default Inventory
