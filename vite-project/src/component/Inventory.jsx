@@ -10,10 +10,17 @@ import { TfiLocationArrow } from "react-icons/tfi";
 import { FaUserFriends } from "react-icons/fa";
 import { IoColorPaletteSharp } from "react-icons/io5";
 import { CiCircleQuestion ,CiSearch} from "react-icons/ci";
+import { PiSpeakerHighFill } from "react-icons/pi";
+import { IoMdArrowDropdownCircle } from "react-icons/io";
 import Price from './Price';
 
 
-
+const SidebarLink = ({ icon, text }) => (
+  <a className="flex items-center" href="#" rel="ugc">
+    {icon}
+    <span className="ml-2">{text}</span>
+  </a>
+);
 const Inventory = () => {
 
   const renderPrices = () => {
@@ -21,93 +28,54 @@ const Inventory = () => {
   };
 
   return (
+
     <div className="flex h-screen bg-gray-100">
-      <nav className=" w-64 px-8 py-4 bg-[#363740]  text-white">
-      <div className="flex items-center space-x-2 mb-10">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          className="h-8 w-8"
-        >
-          <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
-          <line x1="4" x2="4" y1="22" y2="15"></line>
-        </svg>
-        <span className="font-bold">Nishyan</span>
-      </div>
-      <div className="space-y-4 ">
-      <a className=" flex items-center" href="#" rel="ugc">
-            <GoHome className="h-5 w-5 mr-2" /> Home
-          </a>
-        <a className=" flex items-center" href="#" rel="ugc">
-        <BsClipboard2DataFill className=" h-5 w-5 mr-2"/>  Orders
-        </a>
-        <a className=" flex items-center" href="#" rel="ugc">
-         <TbCategory className=" h-5 w-5 mr-2"/> Products
-        </a>
-        <a className=" flex items-center" href="#" rel="ugc">
-         <HiOutlineTruck className=" h-5 w-5 mr-2"/> Delivery
-        </a>
-        <a className=" flex items-center" href="#" rel="ugc">
-         <PiSpeakerHighBold className=" h-5 w-5 mr-2"/> Marketing
-        </a>
-        <a className=" flex items-center" href="#" rel="ugc">
-        <HiOutlineChartBar className=" h-5 w-5 mr-2"/>  Analytics
-        </a>
-        <a className=" flex items-center" href="#" rel="ugc">
-        <MdPayments className=" h-5 w-5 mr-2"/>  Payments
-        </a>
-        <a className=" flex items-center" href="#" rel="ugc">
-         <TfiLocationArrow className=" h-5 w-5 mr-2"/> Tools
-        </a>
-        <a className=" flex items-center" href="#" rel="ugc">
-        <TbDiscount2 className=" h-5 w-5 mr-2"/>  Discounts
-        </a>
-        <a className=" flex items-center" href="#" rel="ugc">
-        <FaUserFriends className=" h-5 w-5 mr-2"/>  Audience
-        </a>
-        <a className=" flex items-center" href="#" rel="ugc">
-        <IoColorPaletteSharp className=" h-5 w-5 mr-2"/>  Appearance
-        </a>
-        <a className=" flex items-center" href="#" rel="ugc">
-        <HiOutlineLightningBolt className=" h-5 w-5 mr-2"/>  Plugins
-        </a>
-      </div>
-      <div className="absolute bottom-0 left-0 p-8">
-        <span className="text-sm">Available credits</span>
-        <span className="block font-bold">₹222.10</span>
-      </div>
-    </nav>
-    
-    <div className="flex-1 px-8 py-4">
+    <nav className="w-64 px-8 py-4 bg-[#363740] text-white">
+    <div className="flex items-center space-x-2 mb-10">
       
-    <div className="flex items-center mb-4">
-  <h1 className="text-xl  mr-2">Payments</h1>
-  <CiCircleQuestion className="h-5 w-5 mr-2" />
-  <span className='text-sm'>How it works</span>
-  <input
-  type="search"
-  className="mx-auto max-w-md h-10 rounded-md border border-input bg-background px-5 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-  style={{
-    boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-    paddingRight: '150px',
-    marginRight: '45rem', 
-  }}
-  placeholder="🔍 Search features, tutorials, etc."
-/>
+      <span className="font-bold">Nishyan</span>
+    </div>
+    <div className="space-y-4">
+      <SidebarLink icon={<GoHome className="h-5 w-5" />} text="Home" />
+      <SidebarLink icon={<BsClipboard2DataFill className="h-5 w-5" />} text="Orders" />
+      <SidebarLink icon={<TbCategory className="h-5 w-5" />} text="Products" />
+      <SidebarLink icon={<HiOutlineTruck className="h-5 w-5" />} text="Delivery" />
+      <SidebarLink icon={<PiSpeakerHighBold className="h-5 w-5" />} text="Marketing" />
+      <SidebarLink icon={<HiOutlineChartBar className="h-5 w-5" />} text="Analytics" />
+      <SidebarLink icon={<MdPayments className="h-5 w-5" />} text="Payments" />
+      <SidebarLink icon={<TfiLocationArrow className="h-5 w-5" />} text="Tools" />
+      <SidebarLink icon={<FaUserFriends className="h-5 w-5" />} text="Audience" />
+      <SidebarLink icon={<IoColorPaletteSharp className="h-5 w-5" />} text="Appearance" />
+      <SidebarLink icon={<HiOutlineLightningBolt className="h-5 w-5" />} text="Plugins" />
+    </div>
+    <div className="absolute bottom-0 left-0 p-8">
+      <span className="text-sm">Available credits</span>
+      <span className="block font-bold">₹222.10</span>
+    </div>
+  </nav>
 
-
-  <BsClipboard2DataFill className="mr-20" /> 
-  <GoHome className="ml-2" /> 
-  </div>
-  
-  <hr/>
+    
+  <div className="flex-1 px-8  overflow-y-auto relative"> 
+        <div className="sticky top-0 z-50 bg-white p-4 rounded-md shadow-md">
+          <div className="flex items-center mb-4">
+            <h1 className="text-xl  mr-2">Payments</h1>
+            <CiCircleQuestion className="h-5 w-5 mr-2" />
+            <span className='text-sm'>How it works</span>
+            <input
+              type="search"
+              className="mx-auto max-w-md h-10 rounded-md border border-input bg-background px-5 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              style={{
+                boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
+                paddingRight: '150px',
+                marginRight: '45rem', 
+              }}
+              placeholder="🔍 Search features, tutorials, etc."
+            />
+            <PiSpeakerHighFill className="mr-20 h-6 w-6 bg-gray-300 " /> 
+            <IoMdArrowDropdownCircle className="ml-2 h-6 w-6 bg-gray-300" /> 
+          </div>
+          <hr />
+        </div>
   
   <div className="flex items-center ml-8 mt-8 mb-8 ">
   <h1 className="text-xl mr-2">Overview</h1>
